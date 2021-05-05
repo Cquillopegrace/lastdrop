@@ -1,0 +1,135 @@
+<html>
+<head>
+<title> FORM </title>
+
+ <style>
+*
+body {
+        background-color:#FFB6C1
+}
+
+
+h1{   
+        margin-top: 50px;
+}
+
+h2{  
+        color: black;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 50px;
+}
+  
+form { 
+        text-align: center;
+}
+
+button { 
+        background-color: Black; 
+        width: 15%;
+        color: white; 
+        padding: 5px;  
+        margin-left: 120px;
+        border: none; 
+        cursor: pointer
+} 
+
+button:hover { 
+        opacity: 0.7; 
+} 
+
+table {
+        margin-left: 00px;
+        margin-bottom: 100px;
+        text-align: left;
+        height: 100px;
+}
+
+table tr {
+        display: inline-block;
+        padding: 10px;
+        margin-top: 100px; 
+}
+
+table tr th {
+        height: 30px;
+        width: 500px;
+        font-size: 15px;
+        font-family: century gothic;
+        color: black;
+        border: 1px solid;
+        background-color: rgb(00,00,00,0.3);
+}
+
+footer {
+        background-color: rgb(00,00,00,0.3);
+}
+ 
+footer ul li {
+        display: inline-block;
+        padding: 50px;
+        margin-left: 20px;
+}
+ 
+ footer li a {
+        padding-left: 45px;
+        color: black;
+        text-decoration: none;
+        font-weight: bolder;
+ }
+
+</style>
+  
+     
+<body text= "#8B0000" ;>
+ 
+ <h1 align = "RightCorner"> <b> CITY of BACOOR </b></h1>
+ <h2>  Municipal Scholarship Application Program </h2>
+
+ <form method="POST" action="/carolslist/{{ list.id}}/add_item">
+
+  <label for="NxtName">YourName:</label> 
+    <input type="text" id="NxtName" name="NxtName" placeholder="InputName" size="19px"> <br><br>
+  <label for="Year" >SchoolYear: </label> 
+    <input type="text" id="Year" name="Year" Placeholder="SY" size="18px" >
+  <br><br>
+  <label for="GPA">YourGPA:</label> 
+    <input type="text" id="GPA" name="GPA" placeholder="InputGPA" size="20px" ><br><br>
+
+
+     <button type="submit" id="rbtnsubmit">Submit</button>
+
+      {% csrf_token %}
+</form>
+
+<table id="caroltable" name='tr'>
+      
+      <tr>      
+                <th>NameList</th>
+                <th>SchoolYear</th>
+                <th>FinalAverage</th>
+
+      </tr>  {% for item in list.item_set.all %} 
+      <tr>
+
+                <td>{{item.nMnames}}</td>
+                <td>{{item.nSyyear}}</td>
+                <td>{{item.nGPAs}}</td>
+                {% endfor %}
+      </tr> 
+
+</table>
+<footer>
+  <ul>
+    <li> 
+ <a href="form.html"> FORMS</a></li>
+ <li><a href="contact.html">CONTACT</a></li>
+ <li><a href="terms.html">TERMS & CONDITION</a></li>
+ <li><a href="faq.html">FAQ</a></li>
+  </ul>
+
+</footer>
+    </body>
+</head>
+</html>
+
