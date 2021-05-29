@@ -6,7 +6,7 @@ class List(models.Model):
     pass
 
 
-class Item(models.Model):
+class Applicant(models.Model):
     nNames = models.TextField(default='')
     nSchools = models.TextField(default='')
     nPrecincts = models.TextField(default='')

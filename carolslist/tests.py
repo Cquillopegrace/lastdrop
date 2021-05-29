@@ -1,7 +1,7 @@
 from django.urls import resolve
 from django.test import TestCase
 from carolslist.views import Homerun
-from carolslist.models import Item, List
+from carolslist.models import Applicant, List
 from django.http import HttpRequest
 from django.template.loader import render_to_string
 
@@ -10,9 +10,9 @@ class MyMainPage(TestCase):
     def test_root_url_resolves_to_mainpage_view(self):
         found = resolve('/')
         self.assertEqual(found.func, Homerun)
-    def test_only_saves_items_when_necessary(self): 
+    def test_only_saves_applicants_when_necessary(self): 
         self.client.get('/')        
-        self.assertEqual(Item.objects.count(), 0)
+        self.assertEqual(Applicant.objects.count(), 0)
       
 class ListViewTest(TestCase):
  
@@ -22,10 +22,10 @@ class ListViewTest(TestCase):
         self.assertTemplateUsed(response, 'form.html')
      
    
-    def test_displays_all_list_items(self):        
+    def test_displays_all_list_applicants(self):        
         list_ = List.objects.create()        
-        Item.objects.create(nNames='Carol', list=list_)        
-        Item.objects.create(nNames='Quillope', list=list_)
+        Applicant.objects.create(nNames='Carol', list=list_)        
+        Applicant.objects.create(nNames='Quillope', list=list_)
    
     def test_passes_correct_list_to_template(self):       
         other_list = List.objects.create()        
@@ -42,49 +42,49 @@ class NewListTest(TestCase):
        
 
        
-class NewItemTest(TestCase):
+class NewApplicantTest(TestCase):
     def test_can_save_a_POST_request_to_an_existing_list(self):       
         other_list = List.objects.create()        
         correct_list = List.objects.create()        
-        self.client.post(f'/carolslist/{correct_list.id}/add_item', data={'Name': 'MyNames','School': 'YourSchool','Precinct':'PrecinctId','NxtName': 'othername','Year': 'MySchoolYear','GPA': 'Mygrade'}) 
+        self.client.post(f'/carolslist/{correct_list.id}/add_applicant', data={'Name': 'MyNames','School': 'YourSchool','Precinct':'PrecinctId','NxtName': 'othername','Year': 'MySchoolYear','GPA': 'Mygrade'}) 
       
-        self.assertEqual(Item.objects.count(), 1)        
-        new_item = Item.objects.first()        
-        self.assertEqual(new_item.nNames, '')       
-        self.assertEqual(new_item.list, correct_list)
+        self.assertEqual(Applicant.objects.count(), 1)        
+        new_applicant = Applicant.objects.first()        
+        self.assertEqual(new_applicant.nNames, '')       
+        self.assertEqual(new_applicant.list, correct_list)
       
     def test_redirects_to_list_view(self):        
         other_list = List.objects.create()        
         correct_list = List.objects.create()        
-        response = self.client.post(f'/carolslist/{correct_list.id}/add_item',data={'Name': 'MyNames','School': 'YourSchool','Precinct':'PrecinctId','NxtName': 'othername','Year': 'MySchoolYear','GPA': 'Mygrade'})   
+        response = self.client.post(f'/carolslist/{correct_list.id}/add_applicant',data={'Name': 'MyNames','School': 'YourSchool','Precinct':'PrecinctId','NxtName': 'othername','Year': 'MySchoolYear','GPA': 'Mygrade'})   
         self.assertRedirects(response, f'/carolslist/{correct_list.id}/')
    
 class ORM(TestCase):
 
-    def test_saving_and_retrieving_items(self):
+    def test_saving_and_retrieving_applicants(self):
         list_ = List()        
         list_.save()
       
-        first_item = Item()        
-        first_item.nNames = 'The first list item' 
-        first_item.list = list_ 
-        first_item.save()        
+        first_applicant = Applicant()        
+        first_applicant.nNames = 'The first list applicant' 
+        first_applicant.list = list_ 
+        first_applicant.save()        
                
-        second_item = Item()      
-        second_item.nNames = 'Item the second'
-        second_item.list = list_         
-        second_item.save()
+        second_applicant = Applicant()      
+        second_applicant.nNames = 'Applicant the second'
+        second_applicant.list = list_         
+        second_applicant.save()
        
        
         saved_list = List.objects.first()          
         self.assertEqual(saved_list, list_)
                  
-        saved_items = Item.objects.all()
-        self.assertEqual(saved_items.count(), 2)
+        saved_applicants = applicant.objects.all()
+        self.assertEqual(saved_applicants.count(), 2)
        
-        first_saved_item = saved_items[0]
-        second_saved_item = saved_items[1]             
-        self.assertEqual(first_saved_item.nNames, 'The first list item')
-        self.assertEqual(first_saved_item.list, list_)
-        self.assertEqual(second_saved_item.nNames, 'Item the second')
-        self.assertEqual(second_saved_item.list, list_)
+        first_saved_applicant = saved_applicants[0]
+        second_saved_applicant = saved_applicants[1]             
+        self.assertEqual(first_saved_applicant.nNames, 'The first list applicants')
+        self.assertEqual(first_saved_applicants.list, list_)
+        self.assertEqual(second_saved_applicants.nNames, 'Applicant the second')
+        self.assertEqual(second_saved_applicants.list, list_)

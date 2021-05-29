@@ -18,7 +18,7 @@ from django.conf.urls import url
 urlpatterns = [    
     url(r'^$', views.Homerun, name='Homerun'),    
     url(r'^carolslist/new$', views.new_list, name='new_list'),    
-    url(r'^carolslist/(\d+)/$', views.view_list, name='view_item'),    
-    url(r'^carolslist/(\d+)/add_item$', views.add_item, name='add_item'),]
+    url(r'^carolslist/(\d+)/$', views.view_list, name='view_applicant'),    
+    url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant'),]
     
    	

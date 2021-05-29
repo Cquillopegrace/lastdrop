@@ -61,6 +61,14 @@ table tr th {
         background-color: rgb(00,00,00,0.3);
 }
 
+table tr td 
+{
+        width: 550px;
+        font-family: century gothic;
+        color: black;
+        margin-bottom: 50px;
+}
+
 footer {
         background-color: rgb(00,00,00,0.3);
 }
@@ -112,9 +120,9 @@ footer ul li {
       </tr>  {% for item in list.item_set.all %} 
       <tr>
 
-                <td>{{item.nMnames}}</td>
-                <td>{{item.nSyyear}}</td>
-                <td>{{item.nGPAs}}</td>
+                <td>{{applicant.nMnames}}</td>
+                <td>{{applicant.nSyyear}}</td>
+                <td>{{applicant.nGPAs}}</td>
                 {% endfor %}
       </tr> 
 
