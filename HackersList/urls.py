@@ -15,10 +15,14 @@ Including another URLconf
 """
 from carolslist import views
 from django.conf.urls import url
+
+from django.contrib import admin
+
 urlpatterns = [    
     url(r'^$', views.Homerun, name='Homerun'),    
-    url(r'^carolslist/new$', views.new_list, name='new_list'),    
+    url(r'^carolslist/new$', views.new_list, name='new_list'),
+    url('admin/', admin.site.urls), 
     url(r'^carolslist/(\d+)/$', views.view_list, name='view_applicant'),    
-    url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant'),]
+    url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant')]   
     
    	
