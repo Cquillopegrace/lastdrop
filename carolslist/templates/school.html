@@ -1,0 +1,80 @@
+<html>
+<head>
+<title> GRADES </title>
+
+<style>
+*
+body {
+        background-color:#FFB6C1
+}
+
+
+h1{   
+        margin-top: 50px;
+}
+
+h2{  
+        color: black;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 50px;
+}
+  
+form { 
+}
+
+button { 
+        background-color: Black; 
+        width: 15%;
+        color: white; 
+        padding: 5px;  
+        margin-left: 120px;
+        border: none; 
+        cursor: pointer
+} 
+
+button:hover { 
+        opacity: 0.7; 
+} 
+
+footer {
+        background-color: rgb(00,00,00,0.3);
+}
+ 
+footer ul li {
+        display: inline-block;
+        padding: 50px;
+        margin-left: 20px;
+}
+ 
+ footer li a {
+        padding-left: 45px;
+        color: black;
+        text-decoration: none;
+        font-weight: bolder;
+ }
+
+</style>
+
+<body text= "#8B0000" ;>
+ 
+ <h1 align = "RightCorner"> <b> CITY of BACOOR </b></h1>
+ <h2>  Municipal Scholarship Application Program </h2>
+
+<form method="POST" action="/carolslist/{{ list.id}}/add_applicant">
+
+	<label for="School"> Name of School:</label> 
+        <input type="text" id="School" name="School" placeholder="Your School"> <br><br>
+    <label for="SAddress"> School Address: </label>
+        <input type="text" id="SAddress" name="SAddress" placeholder="Present School"> <br><br>
+    <label for="YrSection">Year&Section:</label>
+        <input type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec."> <br><br>
+
+     <button type="submit" id="rbtnsubmit">Submit</button>
+
+      {% csrf_token %}
+
+ </form>
+</body>
+</head>
+</html>
