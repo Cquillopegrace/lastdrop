@@ -24,21 +24,21 @@ class School(models.Model):
 	class meta:
 		db_table = "Addschool"
 
-#class Grades(models.Model):
-	#StudentId = models.OneToOneField(Applicant, default =None, on_delete = models.CASCADE)
-	#nGPA = models.Charfield(default='')
-	#class meta:
-		#db_table = "grades"
+class Grades(models.Model):
+	StudentId = models.OneToOneField(Applicant, default =None, on_delete = models.CASCADE)
+	nGPA = models.TextField(default='')
+	class meta:
+		db_table = "grades"
 
-#class Credentials(models.Model):
-	#StudentId = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
-	#nAwards = models.Textfield(default='')
-	#nCerts = models.Textfield(default='')
-	#class meta:
-		#db_table = "credentials"
+class Credentials(models.Model):
+	StudentId = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	nAwards = models.TextField(default='')
+	nCerts = models.TextField(default='')
+	class meta:
+		db_table = "credentials"
 
-#class TypesOfScholarship(models.Model):
-	#nPrecincts = models.OneToOneField(Applicant, default =None, on_delete = models.CASCADE)
-	#ApScholar = models.Textfield(default='')
-	#class meta:
-		#db_table = "typeofscholarship"
+class TypesOfScholarship(models.Model):
+	nPrecincts = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	ApScholar = models.TextField(default='')
+	class meta:
+		db_table = "typeofscholarship"

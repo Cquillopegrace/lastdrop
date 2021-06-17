@@ -1,22 +1,33 @@
 <html>
 <head>
-<title> GRADES </title>
+<body>
+<title> CITY of BACOOR </title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 *
 body {
-        background-color:#FFB6C1
+        background-image: url("static/admin/img/bg.jpg") ;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 }
 
-
 h1{   
-        margin-top: 50px;
+        background-color:#ffff66;
+        padding: 50px;
+        margin-left: 00px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 00px;
+
 }
 
 h2{  
         color: black;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 30px;
         margin-bottom: 50px;
 }
   
@@ -24,42 +35,80 @@ form {
 }
 
 button { 
-        background-color: Black; 
+        background-color: #00008B; 
         width: 15%;
-        color: white; 
-        padding: 5px;  
-        margin-left: 120px;
-        border: none; 
-        cursor: pointer
+        color: #ffff66;  
+        cursor: pointer;
+        margin-left: 500px;
 } 
 
 button:hover { 
         opacity: 0.7; 
 } 
 
-footer {
-        background-color: rgb(00,00,00,0.3);
+header {
+        background-color: #ffff66;
 }
  
-footer ul li {
+header ul li {
         display: inline-block;
         padding: 50px;
         margin-left: 20px;
 }
  
- footer li a {
+ header li a {
         padding-left: 45px;
-        color: black;
+        color: #00008B;
         text-decoration: none;
         font-weight: bolder;
  }
+table
 
+{
+        margin-left: 00px;
+        margin-bottom: 100px;
+        text-align: left;
+        height: 100px;
+
+}
+
+table tr
+{
+        display: inline-block;
+        padding: 10px;
+        margin-top: 100px;
+
+  
+}
+
+table tr th
+{
+        height: 30px;
+        width: 500px;
+        font-size: 15px;
+        font-family: century gothic;
+        color: black;
+        border: 1px solid;
+        background-color: rgb(00,00,00,0.3);
+}
 </style>
 
-<body text= "#8B0000" ;>
+<body text= "#00008B" ;>
  
- <h1 align = "RightCorner"> <b> CITY of BACOOR </b></h1>
- <h2>  Municipal Scholarship Application Program </h2>
+ <h1 align = "center"> <b> Bacoor Scholarship Application Program </b></h1>
+ <header>
+    <ul>
+        <li>
+<a href="/carolslist/Form"> Scholarship Forms</a></li>
+<li><a href="/carolslist/Home"> Home </a></li>
+<li><a href="/carolslist/Offered">Offered</a></li>
+<li><a href="terms.html">Terms & Condition</a></li>
+
+
+        </li>
+    </ul>
+</header>
+ <h2> Other Information </h2>
 
 <form method="POST" action="/carolslist/{{ list.id}}/add_applicant">
 
@@ -69,12 +118,48 @@ footer ul li {
         <input type="text" id="SAddress" name="SAddress" placeholder="Present School"> <br><br>
     <label for="YrSection">Year&Section:</label>
         <input type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec."> <br><br>
+    <label for="nGPA">Final Grade:</label>
+        <input type="text"  id="nGPA" name="nGPA" placeholder="Average"> <br><br>
+    <label for="nAwards">Academic Awards:</label>
+        <input type="text"  id="nAwards" name="nAwards" placeholder="Recieved Awards"> <br><br>
+     <label for="nCerts">Certificates:</label>
+        <input type="text"  id="nCerts" name="nCerts" placeholder="Recieved Certificates"> <br><br>
+    <label for="nPrecincts">Precint No:</label>
+        <input type="text"  id="nPrecincts" name="nPrecincts" placeholder="prercincts"> <br><br>
+    <label for="ApScholar">Types of Scholarship:</label>
+        <input type="text"  id="ApScholar" name="ApScholar" placeholder="Apllied Scholarship"> <br><br>
 
      <button type="submit" id="rbtnsubmit">Submit</button>
 
-      {% csrf_token %}
+{% csrf_token %}
 
  </form>
+ <table id="caroltable" name='tr'>
+      
+      <tr>   
+                <th>School</th>
+                <th>SAddress</th>
+                <th>Yr&Section</th>
+                <th>Average</th>
+                <th>Awards</th>
+                <th>Precinct</th>
+                <th>Appying For</th>
+
+      </tr> {% for item in items %} 
+      <tr>
+                <! -- {{ forloop.counter }}: -- >
+                <td>{{applicant.SAddress}}</td>
+                <td>{{applicant.YSection}}</td>
+                <td>{{applicant.nAddress}}</td>
+                <td>{{applicant.nGPA}}</td>
+                <td>{{applicant.nAwards}}</td>
+                <td>{{applicant.nCerts}}</td>
+                <td>{{applicant.nPrecincts}}</td>
+                <td>{{applicant.ApScholar}}</td>
+                {% endfor %}
+      </tr> 
+
+</table>
 </body>
 </head>
 </html>

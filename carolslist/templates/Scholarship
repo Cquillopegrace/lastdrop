@@ -1,0 +1,53 @@
+<html>
+<head>
+<title> types of scholarship </title>
+
+
+<style> 
+
+table
+
+{
+	margin-left: 50px;
+	text-align: left;
+	height: 200px;
+
+}table tr
+{
+	display: inline-block;
+	padding: 20px;
+	
+}
+table tr th
+{
+	height: 400px;
+	width: 500px;
+	font-size: 15px;
+font-family: century gothic;
+color: black;
+
+
+
+}
+</style>
+
+<body  text= "black" ; >
+<h1 align = "center"> <b> Bacoor Scholarship Application Program </b></h1>
+<h2 align = "center"> <b> Choose a Types of Scholaraship that you are fit! </b></h2>
+<table >
+	<tr>
+		<th>
+1. Academic scholarships <br><br>
+2. Community service scholarships <br><br>
+3. Athletic scholarships <br><br>
+4. Scholarships for hobbies and extracurriculars <br><br>
+5. Scholarships based on applicants' identities <br><br>
+6. Need-based scholarships <br><br>
+7. Employer scholarships and military scholarships <br><br>
+</th>
+</tr>
+
+</table>
+</body>
+</head>
+</html>

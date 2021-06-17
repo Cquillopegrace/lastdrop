@@ -21,8 +21,12 @@ from django.contrib import admin
 urlpatterns = [    
     url(r'^$', views.Homerun, name='Homerun'),    
     url(r'^carolslist/new$', views.new_list, name='new_list'),
-    url('admin/', admin.site.urls), 
-    url(r'^carolslist/(\d+)/$', views.view_list, name='view_applicant'),    
+    url(r'^carolslist/Home$', views.Home, name='Home'),
+    url(r'^carolslist/Offered$', views.Offered, name='Offered'),
+    url(r'^carolslist/Form$', views.Form, name='Form'),
+    url(r'^carolslist/(\d+)/$', views.view_applicant, name='view_applicant'),
+    url(r'^carolslist/form$', views.Homerun_Form, name='Homerun_Form'),
+    url('admin/', admin.site.urls),   
     url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant')]   
     
    	
