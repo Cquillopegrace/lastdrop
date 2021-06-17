@@ -28,5 +28,3 @@ urlpatterns = [
     url(r'^carolslist/form$', views.Homerun_Form, name='Homerun_Form'),
     url('admin/', admin.site.urls),   
     url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant')]   
-    
-   	
