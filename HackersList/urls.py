@@ -21,6 +21,7 @@ from django.contrib import admin
 urlpatterns = [    
     url(r'^$', views.Homerun, name='Homerun'),    
     url(r'^carolslist/new$', views.new_list, name='new_list'),
+    url(r'^carolslist/add$', views.add_applicant, name='add_applicant'),
     url(r'^carolslist/Home$', views.Home, name='Home'),
     url(r'^carolslist/Offered$', views.Offered, name='Offered'),
     url(r'^carolslist/Form$', views.Form, name='Form'),
