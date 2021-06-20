@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^carolslist/Home$', views.Home, name='Home'),
     url(r'^carolslist/Offered$', views.Offered, name='Offered'),
     url(r'^carolslist/Form$', views.Form, name='Form'),
+    url(r'^carolslist/Guide$', views.Guide, name='Guide'),
     url(r'^carolslist/(\d+)/$', views.view_applicant, name='view_applicant'),
     url(r'^carolslist/form$', views.Homerun_Form, name='Homerun_Form'),
     url('admin/', admin.site.urls),   

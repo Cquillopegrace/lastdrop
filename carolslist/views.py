@@ -17,6 +17,9 @@ def Offered(request):
 def Form(request):
     return render(request, 'form.html')
 
+def Guide(request) :
+    return render(request, 'keps.html')
+
 def Homerun_Form(request):
     applicants = Applicant.objects.all()
     return render(request, 'form.html',{'applicants' : applicants})

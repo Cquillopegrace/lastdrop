@@ -8,14 +8,11 @@
 <style>
 *
 body {
-        background-image: url("static/admin/img/bg.img") ;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-color: #B0E0E6;
 }
 
 h1{   
-        background-color:#ffff66;
+        background-color:#20B2AA;
         padding: 50px;
         margin-left: 00px;
         padding-top: 15px;
@@ -30,42 +27,51 @@ h2{
         margin-top: 30px;
         margin-bottom: 50px;
 }
-  
-form { 
-}
 
 button { 
         background-color: #00008B; 
         width: 15%;
         color: #ffff66;  
         cursor: pointer;
-        margin-left: 500px;
+        margin-left: 200px;
 } 
 
 button:hover { 
         opacity: 0.7; 
 } 
-
 header {
-        background-color: #ffff66;
+        background-color: #20B2AA;
 }
  
 header ul li {
         display: inline-block;
-        padding: 50px;
-        margin-left: 20px;
+        padding:40px;
 }
  
- header li a {
-        padding-left: 45px;
+header li a {
         color: #00008B;
         text-decoration: none;
         font-weight: bolder;
+        padding-left: 100px;
+
  }
+
+form {
+       text-align: left;
+       border-style: solid;
+       color:  #2F4F4F;
+       background-color: #7FFFD4;
+       border-radius: 10px;
+       width: 500px;
+       height: 450px;
+       margin-top: 10px;
+       margin-left: 350px;
+
+}
+
 table
 
 {
-        margin-left: 00px;
         margin-bottom: 100px;
         text-align: left;
         height: 100px;
@@ -74,9 +80,11 @@ table
 
 table tr
 {
-        display: inline-block;
+        display: inline-grid;
         padding: 10px;
+        padding-top: 100px;
         margin-top: 100px;
+        height: : 50px;
 
   
 }
@@ -84,12 +92,12 @@ table tr
 table tr th
 {
         height: 30px;
-        width: 500px;
+        width: 250px;
         font-size: 15px;
         font-family: century gothic;
         color: black;
         border: 1px solid;
-        background-color: rgb(00,00,00,0.3);
+        background-color: rgb(00,00,00,0.2);
 }
 </style>
   
@@ -104,7 +112,7 @@ table tr th
 <a href="/carolslist/Form"> Scholarship Forms</a></li>
 <li><a href="/carolslist/Home"> Home </a></li>
 <li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="terms.html">Terms & Condition</a></li>
+<li><a href="/carolslist/Guide">Guide</a></li>
 
 
         </li>
@@ -113,25 +121,25 @@ table tr th
   
  <h2>  Applicant Form </h2>
 <form method="POST" action="/carolslist/new">
-
+<br><br>
     <label for="StudentID">StudID:</label> 
-        <input type="text" id="StudentID" name="StudentID" placeholder="InputID"> <br><br>
+        <input type="text" id="StudentID" name="StudentID" placeholder="InputID" size="40"> <br><br>
     <label for="CompleteName">Full Name: </label>
-        <input type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName"> <br><br>
+        <input type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" size="37"> <br><br>
     <label for="Address">Present Address:</label>
-        <input type="text" id="Address" name="Address" placeholder="Full Address"> <br><br>
+        <input type="text" id="Address" name="Address" placeholder="Full Address" size="31"> <br><br>
     <label for="Gender">Input Gender:</label>
-        <input type="text" id="Gender" name="Gender" placeholder="F/M/Others"> <br><br>
+        <input type="text" id="Gender" name="Gender" placeholder="F/M/Others" size="34"> <br><br>
     <label for="MothersName"> Mothers Full Name:</label>
-        <input type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name"> <br><br>
+        <input type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" size="28"> <br><br>
     <label for="MOccupation"> Occupation:</label>
-        <input type="text" id="MOccupation" name="MOccupation" placeholder="Occupations"> <br><br>
+        <input type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" size="36"> <br><br>
     <label for="FathersName"> Fathers Full Name:</label>
-        <input type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name"> <br><br>
+        <input type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" size="29"> <br><br>
     <label for="FAOccupation"> Occupation:</label>
-        <input type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations"> <br><br>
+        <input type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" size="36"> <br><br>
     <label for="Annual Income"> Yearly Income:</label>
-        <input type="char" id="Annual Income" name="Annual Income" placeholder="Input Income"> <br><br>
+        <input type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" size="34"> <br><br>
 
      <button type="submit" id="rbtnsubmit">Submit</button>
 
