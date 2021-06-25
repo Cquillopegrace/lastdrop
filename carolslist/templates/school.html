@@ -8,18 +8,24 @@
 <style>
 *
 body {
-        background-color: #B0E0E6;
+        background-image: url(/static/images/bg3.jpg) ;
+        background-repeat:repeat;
+        background-size: contain;
+        border-radius: 100px;
 }
+
 
 h1{   
-        background-color:#20B2AA;
-        padding: 50px;
+        background-color: #51b8e1;
+        color: darkblue;
+        padding: 100px;
         margin-left: 00px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        margin-top: 00px;
-
+        padding-top: 35px;
+        padding-bottom: 35px;
+        border-style: solid;
+        border-color: #2196c4;
 }
+
 
 h2{  
         color: black;
@@ -28,23 +34,9 @@ h2{
         margin-bottom: 50px;
 }
   
-form { 
-}
-
-button { 
-        background-color: #00008B; 
-        width: 15%;
-        color: #ffff66;  
-        cursor: pointer;
-        margin-left: 500px;
-} 
-
-button:hover { 
-        opacity: 0.7; 
-} 
 
 header {
-        background-color: #20B2AA;
+        border-style: dashed;
 }
  
 header ul li {
@@ -53,40 +45,71 @@ header ul li {
 }
  
 header li a {
-        color: #00008B;
+        color: black;
         text-decoration: none;
         font-weight: bolder;
         padding-left: 100px;
 
  }
+
+form {
+       text-align: left;
+       border-style: solid;
+       color:  #2F4F4F;
+       background-color: #7FFFD4;
+       border-radius: 10px;
+       width: 500px;
+       height: 420px;
+       margin-top: 10px;
+       margin-left: 350px;
+       padding-left: 10px;
+
+}
+form a {
+        color:  white;
+        background-color:   #00008B;
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 210px;
+    }
+
 table
 
 {
-        margin-left: 00px;
-        margin-bottom: 100px;
         text-align: left;
         height: 100px;
-
 }
 
 table tr
 {
         display: inline-block;
         padding: 10px;
+        padding-top: 100px;
         margin-top: 100px;
+        height: : 50px;
 
   
 }
 
 table tr th
 {
-        height: 30px;
-        width: 500px;
+        height: 35px;
+        width: 160px;
         font-size: 15px;
         font-family: century gothic;
         color: black;
         border: 1px solid;
-        background-color: rgb(00,00,00,0.3);
+        background-color: rgb(00,00,00,0.2);
+}
+table tr td
+{
+        display: inline-block;
+        width: 119px;
+        font-size: 15px;
+        font-family: century gothic;
+        color: darkblue;
+        border: 1px solid;
+        background-color:whitesmoke ;
 }
 </style>
 
@@ -96,37 +119,36 @@ table tr th
  <header>
     <ul>
         <li>
-<a href="/carolslist/Form"> Scholarship Forms</a></li>
-<li><a href="/carolslist/Home"> Home </a></li>
+<a href="/carolslist/Home"> Home </a></li>
+<li><a href="/carolslist/require"> Requirements</a></li>
 <li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="/carolslist/Guide">Guide</a></li>
-
+<li><a href="#Guide">Guide</a></li>
 
         </li>
     </ul>
 </header>
- <h2> Other Information </h2>
+ <h2> ADDITIONAL INFORMATION </h2>
 
 <form method="POST" action="/carolslist/{{ list.id}}/add_applicant">
-
+<br><br>
 	<label for="School"> Name of School:</label> 
-        <input type="text" id="School" name="School" placeholder="Your School"> <br><br>
+        <input type="text" id="School" name="School" placeholder="Your School" size="31"> <br><br>
     <label for="SAddress"> School Address: </label>
-        <input type="text" id="SAddress" name="SAddress" placeholder="Present School"> <br><br>
+        <input type="text" id="SAddress" name="SAddress" placeholder="Present School" size="31"> <br><br>
     <label for="YrSection">Year&Section:</label>
-        <input type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec."> <br><br>
+        <input type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec." size="33"> <br><br>
     <label for="nGPA">Final Grade:</label>
-        <input type="text"  id="nGPA" name="nGPA" placeholder="Average"> <br><br>
+        <input type="text"  id="nGPA" name="nGPA" placeholder="Average" size="35"> <br><br>
     <label for="nAwards">Academic Awards:</label>
-        <input type="text"  id="nAwards" name="nAwards" placeholder="Recieved Awards"> <br><br>
+        <input type="text"  id="nAwards" name="nAwards" placeholder="Recieved Awards" size="29"> <br><br>
      <label for="nCerts">Certificates:</label>
-        <input type="text"  id="nCerts" name="nCerts" placeholder="Recieved Certificates"> <br><br>
+        <input type="text"  id="nCerts" name="nCerts" placeholder="Recieved Certificates" size="35"> <br><br>
     <label for="nPrecincts">Precint No:</label>
-        <input type="text"  id="nPrecincts" name="nPrecincts" placeholder="prercincts"> <br><br>
+        <input type="text"  id="nPrecincts" name="nPrecincts" placeholder="prercincts" size="36"> <br><br>
     <label for="ApScholar">Types of Scholarship:</label>
-        <input type="text"  id="ApScholar" name="ApScholar" placeholder="Apllied Scholarship"> <br><br>
+        <input type="text"  id="ApScholar" name="ApScholar" placeholder="Apllied Scholarship" size="26"> <br><br><br>
 
-     <button type="submit" id="rbtnsubmit">Submit</button>
+     <a href= "/carolslist/Message" id="rbtnsubmit" >submit</a>
 
 {% csrf_token %}
 
@@ -142,7 +164,7 @@ table tr th
                 <th>Precinct</th>
                 <th>Appying For</th>
 
-      </tr> {% for item in items %} 
+      </tr> {% for applicant in applicants %} 
       <tr>
                 <! -- {{ forloop.counter }}: -- >
                 <td>{{applicant.SAddress}}</td>

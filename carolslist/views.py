@@ -14,11 +14,14 @@ def Home(request):
 def Offered(request):
     return render(request, 'scholarship.html')
 
-def Form(request):
-    return render(request, 'form.html')
+def require(request):
+    return render(request, 'require.html')
 
 def Guide(request) :
     return render(request, 'keps.html')
+
+def Message(request) :
+    return render(request, 'results.html')
 
 def Homerun_Form(request):
     applicants = Applicant.objects.all()
@@ -41,6 +44,7 @@ def add_applicant(request):
     applicant_ = Applicant.objects.create()
     School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'], applicant=applicant_)
     return redirect(f'/carolslist/{applicant_.id}/')
+
 
 #def add_applicant(request, list_id):
     #list_ = List.objects.get(id=list_id)
