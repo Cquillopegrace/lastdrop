@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from carolslist.models import Applicant, School, Grades, Credentials, TypesOfScholarship
+from django.views.decorators.csrf import csrf_exempt
 
 
 def Homerun(request):
@@ -23,6 +24,10 @@ def Guide(request) :
 def Message(request) :
     return render(request, 'results.html')
 
+def Contact(request) :
+    return render(request, 'contact.html')
+
+
 def Homerun_Form(request):
     applicants = Applicant.objects.all()
     return render(request, 'form.html',{'applicants' : applicants})
@@ -30,7 +35,11 @@ def Homerun_Form(request):
 
 def view_applicant(request, applicant_id):
     applicant_ = Applicant.objects.get(id=applicant_id)
-    return render(request, 'school.html', {'applicant_': applicant_})
+    return render(request, 'school.html', {'applicant': applicant_})
+
+# def new_message(request):
+#     applicant_ = Applicant.objects.get(id=applicant_id)
+#     return render(request, 'results.html', {'applicant': applicant_})
 
 # def next_list(request, applicant_id):
 #     applicant_ = Applicant.objects.get(id=applicant_id)
@@ -40,9 +49,9 @@ def new_list(request):
     applicants_ = Applicant.objects.create(nStudentId=request.POST['StudentID'],nFullName=request.POST['CompleteName'],nAddress=request.POST['Address'],nGenders=request.POST['Gender'],nMoNames=request.POST['MothersName'],nOccupation1=request.POST['MOccupation'],nFaNames=request.POST['FathersName'],nOccupation2=request.POST['FAOccupation'], nAIncome=request.POST['Annual Income'],)
     return redirect(f'/carolslist/{applicants_.id}/')
 
-def add_applicant(request):
-    applicant_ = Applicant.objects.create()
-    School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'], applicant=applicant_)
+def add_applicant(request,applicant_id):
+    applicant_ = Applicant.objects.get(id=applicant_id)
+    School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'], nGPA=request.POST['ngpa'],nAwards=request.POST['nawards'],nCerts=request.POST['ncerts'],nPrecincts=request.POST['nprecincts'],ApScholar=request.POST['apScholar'],applicant=applicant_)
     return redirect(f'/carolslist/{applicant_.id}/')
 
 

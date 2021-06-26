@@ -17,7 +17,7 @@ class Applicant(models.Model):
 		db_table = "Addapplicant"
 
 class School(models.Model):
-	Napplicant = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	StudentId = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
 	NMSchool = models.TextField(default='')
 	SAddress = models.TextField(default='')
 	YSection = models.TextField(default='')

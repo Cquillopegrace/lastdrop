@@ -93,30 +93,30 @@ class PageTest(LiveServerTestCase):
 
         inputbox13 = self.browser.find_element_by_id('YrSection')
         self.assertEqual(inputbox13.get_attribute('placeholder'),'Yr&Sec.')
-        inputbox13.send_keys('30000')
+        inputbox13.send_keys('bsie-ict')
         time.sleep(1)
 
-        inputbox14 = self.browser.find_element_by_id('nGPA')
+        inputbox14 = self.browser.find_element_by_id('ngpa')
         self.assertEqual(inputbox14.get_attribute('placeholder'),'Average')
         inputbox14.send_keys('90')
         time.sleep(1)
 
-        inputbox15 = self.browser.find_element_by_id('nAwards')
+        inputbox15 = self.browser.find_element_by_id('nawards')
         self.assertEqual(inputbox15.get_attribute('placeholder'),'Recieved Awards')
         inputbox15.send_keys('Best in Math')
         time.sleep(1)
 
-        inputbox16 = self.browser.find_element_by_id('nCerts')
+        inputbox16 = self.browser.find_element_by_id('ncerts')
         self.assertEqual(inputbox16.get_attribute('placeholder'),'Recieved Certificates')
         inputbox16.send_keys('Top 5 in class')
         time.sleep(1)
 
-        inputbox17 = self.browser.find_element_by_id('nPrecincts')
+        inputbox17 = self.browser.find_element_by_id('nprecincts')
         self.assertEqual(inputbox17.get_attribute('placeholder'),'prercincts')
         inputbox17.send_keys('0415')
         time.sleep(1)
 
-        inputbox18 = self.browser.find_element_by_id('ApScholar')
+        inputbox18 = self.browser.find_element_by_id('apScholar')
         self.assertEqual(inputbox18.get_attribute('placeholder'),'Apllied Scholarship')
         inputbox18.send_keys('Full Scholarship')
         time.sleep(1)

@@ -65,6 +65,17 @@ form {
        padding-left: 10px;
 
 }
+/*button { 
+        background-color: #00008B; 
+        width: 15%;
+        color: #ffff66;  
+        cursor: pointer;
+        margin-left: 200px;
+} 
+
+button:hover { 
+        opacity: 0.7; 
+} */
 form a {
         color:  white;
         background-color:   #00008B;
@@ -122,31 +133,33 @@ table tr td
 <a href="/carolslist/Home"> Home </a></li>
 <li><a href="/carolslist/require"> Requirements</a></li>
 <li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="#Guide">Guide</a></li>
+<li><a href="/carolslist/Contact">Contact</a></li>
 
         </li>
     </ul>
 </header>
  <h2> ADDITIONAL INFORMATION </h2>
 
-<form method="POST" action="/carolslist/{{ list.id}}/add_applicant">
+<form method="POST" action="/carolslist/{{applicant_id}}/add_applicant">
 <br><br>
 	<label for="School"> Name of School:</label> 
-        <input type="text" id="School" name="School" placeholder="Your School" size="31"> <br><br>
+        <input required type="text" id="School" name="School" placeholder="Your School" size="31"> <br><br>
     <label for="SAddress"> School Address: </label>
-        <input type="text" id="SAddress" name="SAddress" placeholder="Present School" size="31"> <br><br>
+        <input required type="text" id="SAddress" name="SAddress" placeholder="Present School" size="31"> <br><br>
     <label for="YrSection">Year&Section:</label>
-        <input type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec." size="33"> <br><br>
-    <label for="nGPA">Final Grade:</label>
-        <input type="text"  id="nGPA" name="nGPA" placeholder="Average" size="35"> <br><br>
-    <label for="nAwards">Academic Awards:</label>
-        <input type="text"  id="nAwards" name="nAwards" placeholder="Recieved Awards" size="29"> <br><br>
-     <label for="nCerts">Certificates:</label>
-        <input type="text"  id="nCerts" name="nCerts" placeholder="Recieved Certificates" size="35"> <br><br>
-    <label for="nPrecincts">Precint No:</label>
-        <input type="text"  id="nPrecincts" name="nPrecincts" placeholder="prercincts" size="36"> <br><br>
-    <label for="ApScholar">Types of Scholarship:</label>
-        <input type="text"  id="ApScholar" name="ApScholar" placeholder="Apllied Scholarship" size="26"> <br><br><br>
+        <input required type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec." size="33"> <br><br>
+    <label for="ngpa">Final Grade:</label>
+        <input required type="text"  id="ngpa" name="ngpa" placeholder="Average" size="35"> <br><br>
+    <label for="nawards">Academic Awards:</label>
+        <input required type="text"  id="nawards" name="nawards" placeholder="Recieved Awards" size="29"> <br><br>
+     <label for="ncerts">Certificates:</label>
+        <input required type="text"  id="ncerts" name="ncerts" placeholder="Recieved Certificates" size="35"> <br><br>
+    <label for="nprecincts">Precint No:</label>
+        <input required type="text"  id="nprecincts" name="nprecincts" placeholder="prercincts" size="36"> <br><br>
+    <label for="apScholar">Types of Scholarship:</label>
+        <input required type="text"  id="apScholar" name="apScholar" placeholder="Apllied Scholarship" size="26"> <br><br><br>
+
+    <!-- <button type="submit" id="rbtnsubmit">Submit</button> -->
 
      <a href= "/carolslist/Message" id="rbtnsubmit" >submit</a>
 
@@ -162,21 +175,22 @@ table tr td
                 <th>Average</th>
                 <th>Awards</th>
                 <th>Precinct</th>
-                <th>Appying For</th>
+                <th>Applying For</th>
 
-      </tr> {% for applicant in applicants %} 
+      </tr>  {% for school in applicant.school_set.all %}
       <tr>
-                <! -- {{ forloop.counter }}: -- >
-                <td>{{applicant.SAddress}}</td>
-                <td>{{applicant.YSection}}</td>
-                <td>{{applicant.nAddress}}</td>
-                <td>{{applicant.nGPA}}</td>
-                <td>{{applicant.nAwards}}</td>
-                <td>{{applicant.nCerts}}</td>
-                <td>{{applicant.nPrecincts}}</td>
-                <td>{{applicant.ApScholar}}</td>
-                {% endfor %}
-      </tr> 
+                <!{{ forloop.counter }}: -->
+
+                <td>{{forloop}}:{{school.NMSchool}}</td>
+                <td>{{school.SAddress}}</td>
+                <td>{{school.YSection}}</td>
+                <td>{{school.nGPA}}</td>
+                <td>{{school.nAwards}}</td>
+                <td>{{school.nCerts}}</td>
+                <td>{{school.nPrecincts}}</td>
+                <td>{{school.ApScholar}}</td>
+                
+      </tr> {% endfor %}
 
 </table>
 </body>

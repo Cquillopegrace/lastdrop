@@ -126,7 +126,7 @@ table tr td
 <a href="/carolslist/Home"> Home </a></li>
 <li><a href="/carolslist/require"> Requirements</a></li>
 <li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="#Guide">Guide</a></li>
+<li><a href="/carolslist/Contact">Contact</a></li>
 
 
         </li>
@@ -137,23 +137,23 @@ table tr td
 <form method="POST" action="/carolslist/new">
 <br><br>
     <label for="StudentID">StudID:</label> 
-        <input type="text" id="StudentID" name="StudentID" placeholder="InputID" size="40"> <br><br>
+        <input required type="text" id="StudentID" name="StudentID" placeholder="InputID" size="40"> <br><br>
     <label for="CompleteName">Full Name: </label>
-        <input type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" size="37"> <br><br>
-    <label for="Address">Present Address:</label>
-        <input type="text" id="Address" name="Address" placeholder="Full Address" size="31"> <br><br>
+        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" size="37"> <br><br>
+    <label  for="Address">Present Address:</label>
+        <input required type="text" id="Address" name="Address" placeholder="Full Address" size="31"> <br><br>
     <label for="Gender">Input Gender:</label>
-        <input type="text" id="Gender" name="Gender" placeholder="F/M/Others" size="34"> <br><br>
+        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others" size="34"> <br><br>
     <label for="MothersName"> Mothers Full Name:</label>
-        <input type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" size="28"> <br><br>
+        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" size="28"> <br><br>
     <label for="MOccupation"> Occupation:</label>
-        <input type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" size="36"> <br><br>
+        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" size="36"> <br><br>
     <label for="FathersName"> Fathers Full Name:</label>
-        <input type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" size="29"> <br><br>
+        <input required type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" size="29"> <br><br>
     <label for="FAOccupation"> Occupation:</label>
-        <input type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" size="36"> <br><br>
+        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" size="36"> <br><br>
     <label for="Annual Income"> Yearly Income:</label>
-        <input type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" size="34"> <br><br>
+        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" size="34"> <br><br>
 
      <button type="submit" id="rbtnsubmit">Submit</button>
 
@@ -185,8 +185,8 @@ table tr td
                 <td>{{applicant.nFaNames}}</td>
                 <td>{{applicant.nOccupation2}}</td>
                 <td>{{applicant.nAIncome}}</td>
-                {% endfor %}
-      </tr> 
+                
+      </tr> {% endfor %}
 
 </table>
 </body>
