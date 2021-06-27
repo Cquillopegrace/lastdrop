@@ -1,0 +1,91 @@
+<html>
+<head>
+<body>
+<title> CITY of BACOOR </title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+*
+body {
+        background-image: url(/static/images/bg2.png) ;
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        border-radius: 100px;
+}
+h1{   
+        background-color: #51b8e1;
+        text-align: center;
+        color: darkblue;
+        padding: 100px;
+        margin-left: 00px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        border-style: solid;
+        border-color: #2196c4;
+}
+h4 {
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 50px;
+}
+
+form {
+       text-align: left;
+       border-style: solid;
+       color:  #2F4F4F;
+       background-color: #7FFFD4;
+       border-radius: 10px;
+       width: 500px;
+       height: 450px;
+       margin-top: 10px;
+       margin-left: 350px;
+       padding-left: 10px;
+       margin-top: 100px;
+
+}
+button { 
+        background-color: #00008B; 
+        width: 15%;
+        color: #ffff66;  
+        cursor: pointer;
+        margin-left: 200px;
+} 
+
+button:hover { 
+        opacity: 0.7; 
+} 
+
+</style>
+
+<h1> Please, Re-check your details! </h1>
+<h4> Click submit button if all of your information are truth and correct!</h4>
+
+	<form method="POST" action="update/{{ applicants.id }}">
+
+{% csrf_token %}
+
+<br><br>
+	<label for="StudentID">StudID:</label> 
+        <input required type="text" id="StudentID" name="StudentID" placeholder="InputID" value="{{ applicants.nStudentId }}" size="40"> <br><br>
+    <label for="CompleteName">Full Name: </label>
+        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" value="{{ applicants.nFullName }}" size="37"> <br><br>
+    <label  for="Address">Present Address:</label>
+        <input required type="text" id="Address" name="Address" placeholder="Full Address" value="{{ applicants.nAddress }}"  size="31"> <br><br>
+    <label for="Gender">Input Gender:</label>
+        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others" value="{{ applicants.nGenders }}" size="34"> <br><br>
+    <label for="MothersName"> Mothers Full Name:</label>
+        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" value="{{ applicants.nMoNames }}"  size="28"> <br><br>
+    <label for="MOccupation"> Occupation:</label>
+        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" value="{{ applicants.nOccupation1 }}"  size="36"> <br><br>
+    <label for="FathersName"> Fathers Full Name:</label>
+        <input required type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" value="{{ applicants.nFaNames}}" size="29"> <br><br>
+    <label for="FAOccupation"> Occupation:</label>
+        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" value="{{applicants.nOccupation2}}" size="36"> <br><br>
+    <label for="Annual Income"> Yearly Income:</label>
+        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" value="{{ applicants.nAIncome }}" size="34"> <br><br>
+
+        <button type="submit" id="rbtnsubmit">Submit</button>
+
+</html>

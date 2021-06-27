@@ -8,9 +8,10 @@
 <style>
 *
 body {
-        background-image: url(/static/images/bg3.jpg) ;
+        background-image: url(/static/images/bg2.png) ;
         background-repeat:repeat;
-        background-size: contain;
+        background-size: cover;
+        background-attachment: fixed;
         border-radius: 100px;
 }
 
@@ -140,7 +141,7 @@ table tr td
 </header>
  <h2> ADDITIONAL INFORMATION </h2>
 
-<form method="POST" action="/carolslist/{{applicant_id}}/add_applicant">
+<form method="POST" action="/carolslist/{{applicant.id}}/add_applicant">
 <br><br>
 	<label for="School"> Name of School:</label> 
         <input required type="text" id="School" name="School" placeholder="Your School" size="31"> <br><br>

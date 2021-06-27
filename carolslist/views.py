@@ -37,22 +37,42 @@ def view_applicant(request, applicant_id):
     applicant_ = Applicant.objects.get(id=applicant_id)
     return render(request, 'school.html', {'applicant': applicant_})
 
-# def new_message(request):
-#     applicant_ = Applicant.objects.get(id=applicant_id)
-#     return render(request, 'results.html', {'applicant': applicant_})
-
-# def next_list(request, applicant_id):
-#     applicant_ = Applicant.objects.get(id=applicant_id)
-#     return render(request, 'school.html', {'applicant_': applicant_})
 
 def new_list(request):
     applicants_ = Applicant.objects.create(nStudentId=request.POST['StudentID'],nFullName=request.POST['CompleteName'],nAddress=request.POST['Address'],nGenders=request.POST['Gender'],nMoNames=request.POST['MothersName'],nOccupation1=request.POST['MOccupation'],nFaNames=request.POST['FathersName'],nOccupation2=request.POST['FAOccupation'], nAIncome=request.POST['Annual Income'],)
     return redirect(f'/carolslist/{applicants_.id}/')
 
 def add_applicant(request,applicant_id):
-    applicant_ = Applicant.objects.get(id=applicant_id)
-    School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'], nGPA=request.POST['ngpa'],nAwards=request.POST['nawards'],nCerts=request.POST['ncerts'],nPrecincts=request.POST['nprecincts'],ApScholar=request.POST['apScholar'],applicant=applicant_)
+    applicante_ = Applicant.objects.get(id=applicant_id)
+    School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'],applicant=applicant_)
     return redirect(f'/carolslist/{applicant_.id}/')
+
+
+def edit(request, id):
+    applicants = Applicant.objects.get(id=id)
+    context = {'applicants' : applicants}
+    return render(request, 'crud.html', context)
+
+def update(request, id):
+    applicant= Applicant.objects.get(id=id)
+    applicant.nStudentId = request.POST['StudentID']
+    applicant.nFullName = request.POST['CompleteName']
+    applicant.nAddress = request.POST['Address']
+    applicant.nGenders = request.POST['Gender']
+    applicant.nMoNames = request.POST['MothersName']
+    applicant.nOccupation1 = request.POST['MOccupation']
+    applicant.nFaNames = request.POST['FathersName']
+    applicant.nOccupation2= request.POST['FAOccupation']
+    applicant.nAIncome = request.POST['Annual Income']
+    applicant.save()
+    return redirect ('/carolslist/form')
+
+def delete(request, id):
+    applicant = Applicant.objects.get(id=id)
+    applicant.delete()
+    return redirect ('/carolslist/form')
+
+
 
 
 #def add_applicant(request, list_id):

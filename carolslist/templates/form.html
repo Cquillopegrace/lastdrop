@@ -8,9 +8,10 @@
 <style>
 *
 body {
-        background-image: url(/static/images/bg3.jpg) ;
-        background-repeat:repeat;
-        background-size: contain;
+        background-image: url(/static/images/bg2.png) ;
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         border-radius: 100px;
 }
 
@@ -46,6 +47,7 @@ button:hover {
 } 
 header {
         border-style: dashed;
+
 }
  
 header ul li {
@@ -139,21 +141,21 @@ table tr td
     <label for="StudentID">StudID:</label> 
         <input required type="text" id="StudentID" name="StudentID" placeholder="InputID" size="40"> <br><br>
     <label for="CompleteName">Full Name: </label>
-        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" size="37"> <br><br>
+        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName"  size="37"> <br><br>
     <label  for="Address">Present Address:</label>
-        <input required type="text" id="Address" name="Address" placeholder="Full Address" size="31"> <br><br>
+        <input required type="text" id="Address" name="Address" placeholder="Full Address"   size="31"> <br><br>
     <label for="Gender">Input Gender:</label>
-        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others" size="34"> <br><br>
+        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others"  size="34"> <br><br>
     <label for="MothersName"> Mothers Full Name:</label>
-        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" size="28"> <br><br>
+        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name"   size="28"> <br><br>
     <label for="MOccupation"> Occupation:</label>
-        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" size="36"> <br><br>
+        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations"   size="36"> <br><br>
     <label for="FathersName"> Fathers Full Name:</label>
         <input required type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" size="29"> <br><br>
     <label for="FAOccupation"> Occupation:</label>
-        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" size="36"> <br><br>
+        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations"  size="36"> <br><br>
     <label for="Annual Income"> Yearly Income:</label>
-        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" size="34"> <br><br>
+        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income"  size="34"> <br><br>
 
      <button type="submit" id="rbtnsubmit">Submit</button>
 
@@ -185,6 +187,8 @@ table tr td
                 <td>{{applicant.nFaNames}}</td>
                 <td>{{applicant.nOccupation2}}</td>
                 <td>{{applicant.nAIncome}}</td>
+                <td><a href="edit/{{applicant.id}}">EDIT</a></td>
+                <td><a href="delete/{{applicant.id}}">DELETE</a></td>
                 
       </tr> {% endfor %}
 
