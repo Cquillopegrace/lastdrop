@@ -17,7 +17,7 @@ class Applicant(models.Model):
 		db_table = "Addapplicant"
 
 class School(models.Model):
-	StudentId = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	applicant = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
 	NMSchool = models.TextField(default='')
 	SAddress = models.TextField(default='')
 	YSection = models.TextField(default='')
@@ -25,20 +25,20 @@ class School(models.Model):
 		db_table = "Addschool"
 
 class Grades(models.Model):
-	StudentId = models.OneToOneField(Applicant, default =None, on_delete = models.CASCADE)
+	applicant = models.OneToOneField(Applicant, default =None, on_delete = models.CASCADE)
 	nGPA = models.TextField(default='')
 	class meta:
 		db_table = "grades"
 
 class Credentials(models.Model):
-	StudentId = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	applicant = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
 	nAwards = models.TextField(default='')
 	nCerts = models.TextField(default='')
 	class meta:
 		db_table = "credentials"
 
 class TypesOfScholarship(models.Model):
-	nPrecincts = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
+	applicant = models.ForeignKey(Applicant, default =None, on_delete = models.CASCADE)
 	ApScholar = models.TextField(default='')
 	class meta:
 		db_table = "typeofscholarship"

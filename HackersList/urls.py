@@ -22,7 +22,6 @@ urlpatterns = [
     url(r'^$', views.Homerun, name='Homerun'),    
     url(r'^carolslist/new$', views.new_list, name='new_list'),
     url(r'^carolslist/(\d+)/$', views.view_applicant, name='view_applicant'),
-    url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant'),
     url(r'^carolslist/Message$', views.Message, name='Message'),
     url(r'^carolslist/Contact$', views.Contact, name='Contact'),
     url(r'^carolslist/Home$', views.Home, name='Home'),
@@ -35,6 +34,7 @@ urlpatterns = [
     url(r'^carolslist/edit/(?P<id>\d+)$', views.edit, name='edit'),
     url(r'^carolslist/edit/update/(?P<id>\d+)$', views.update, name='update'),
 
-    url(r'^carolslist/delete/(?P<id>\d+)$', views.delete, name='delete'),]
+    url(r'^carolslist/delete/(?P<id>\d+)$', views.delete, name='delete'),
+    url(r'^carolslist/(\d+)/add_applicant$', views.add_applicant, name='add_applicant'),]
     
     

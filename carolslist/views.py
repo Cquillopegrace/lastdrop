@@ -43,7 +43,7 @@ def new_list(request):
     return redirect(f'/carolslist/{applicants_.id}/')
 
 def add_applicant(request,applicant_id):
-    applicante_ = Applicant.objects.get(id=applicant_id)
+    applicant_ = Applicant.objects.get(id=applicant_id)
     School.objects.create(NMSchool=request.POST['School'],SAddress=request.POST['SAddress'],YSection=request.POST['YrSection'],applicant=applicant_)
     return redirect(f'/carolslist/{applicant_.id}/')
 
