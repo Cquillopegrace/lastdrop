@@ -35,7 +35,7 @@ def Homerun_Form(request):
     return render(request, 'form.html',{'applicants' : applicants})
 
 def new_applicant(request):
-    applicants_ = Applicant.objects.create(nFullName=request.POST['CompleteName'],nAddress=request.POST['Address'],aage=request.POST['Aage'],nGenders=request.POST['Gender'],acontumber =request.POST['Cnumber'],aemailAddress=request.POST['EmailAdd'],agname=request.POST['GName'],asoi=request.POST['Occupation'], nAIncome=request.POST['Annual Income'],ausername =request.POST['Usersname'],apassword=request.POST['Passwords'],sstatus=request.POST['stats'])
+    applicants_ = Applicant.objects.create(nFullName=request.POST['CompleteName'],nAddress=request.POST['Address'],aage=request.POST['Aage'],nGenders=request.POST['Gender'],acontumber=request.POST['Cnumber'],aemailAddress=request.POST['EmailAdd'],agname=request.POST['GName'],asoi=request.POST['Occupation'],nAIncome=request.POST['Annual Income'],ausername=request.POST['Usersname'],apassword=request.POST['Passwords'],sstatus=request.POST['stats'])
     return redirect(f'/{applicants_.id}/view_applicant') 
 
 def view_applicant(request, applicant_id):
@@ -93,7 +93,6 @@ def edit(request, id):
 
 def update(request, id):
     applicant= Applicant.objects.get(id=id)
-    applicant.sstatus = request.POST['stats']
     applicant.save()
     return redirect ('/applicant_list')
 

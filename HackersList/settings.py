@@ -29,7 +29,7 @@ SECRET_KEY = 'hl#t0^o(!oazhn76wu14m=n%#3um&3s77s^%5#7^7zn=!f0^j&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['bsprogram.ph']
 
 
 # Application definition
@@ -131,5 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
