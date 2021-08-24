@@ -67,24 +67,40 @@ button:hover {
 {% csrf_token %}
 
 <br><br>
-	<label for="StudentID">StudID:</label> 
-        <input required type="text" id="StudentID" name="StudentID" placeholder="InputID" value="{{ applicants.nStudentId }}" size="40"> <br><br>
-    <label for="CompleteName">Full Name: </label>
-        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName" value="{{ applicants.nFullName }}" size="37"> <br><br>
-    <label  for="Address">Present Address:</label>
-        <input required type="text" id="Address" name="Address" placeholder="Full Address" value="{{ applicants.nAddress }}"  size="31"> <br><br>
-    <label for="Gender">Input Gender:</label>
-        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others" value="{{ applicants.nGenders }}" size="34"> <br><br>
-    <label for="MothersName"> Mothers Full Name:</label>
-        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name" value="{{ applicants.nMoNames }}"  size="28"> <br><br>
-    <label for="MOccupation"> Occupation:</label>
-        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations" value="{{ applicants.nOccupation1 }}"  size="36"> <br><br>
-    <label for="FathersName"> Fathers Full Name:</label>
-        <input required type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" value="{{ applicants.nFaNames}}" size="29"> <br><br>
-    <label for="FAOccupation"> Occupation:</label>
-        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations" value="{{applicants.nOccupation2}}" size="36"> <br><br>
-    <label for="Annual Income"> Yearly Income:</label>
-        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income" value="{{ applicants.nAIncome }}" size="34"> <br><br>
+
+    <label for="CompleteName"> </label>
+        <input required type="text" id="CompleteName" name="CompleteName" placeholder="NAME OF APPLICANT" value="{{ applicant.nFullName }}" size="37"> <br><br>
+    <label  for="Address"></label>
+        <input required type="text" id="Address" name="Address" placeholder="COMPLETE HOME ADDRESS" value="{{ applicant.nAddress }}"  size="31"> <br><br>
+
+    <label for="Aage"> </label>
+    <input required type="int" id="Aage" name="Aage" placeholder="AGE" value="{{ applicant.aage }}" > <br> <br>
+
+    <label for="Gender"></label>
+    <select id="Gender" name="Gender" value="{{ applicant.nGenders}}"> 
+        <option value="female"> FEMALE </option> <option id="male"> MALE</option> </select> <br><br>
+
+    <label for="Cnumber"> </label>
+    <input required type="int" id="Cnumber" name="Cnumber" value="{{ applicant.acontumber}}" placeholder="Contact Number" > <br> <br>
+
+    <label for="EmailAdd"> </label>
+        <input required type="text" id="EmailAdd" name="EmailAdd" value="{{ applicant.aemailAddress}}" placeholder="EMAIL ADDRESS"   size="28"> <br><br>
+
+    <label for="GName"> </label>
+        <input required type="text" id="GName" name="GName" value="{{applicant.agname}}" placeholder="GUARDIAN's NAME" size="29"> <br><br>
+
+    <label for="Occupation"> </label>
+        <input required type="text" id="Occupation" name="Occupation" placeholder="GUARDIAN's OCCUPATION" value="{{ applicant.asoi}}" size="29"> <br><br>
+
+    <label for="Annual Income"> </label>
+    <input required type="int" id="Annual Income" value="{{ applicant.nAIncome}}" name="Annual Income" placeholder="ANNUAL INCOME" > <br> <br>
+
+    <label for="Usersname"> </label>
+    <input required type="text" id="Usersname" name="Usersname" value="{{ applicant.ausername }}" placeholder="USER NAME" > <br> <br>
+
+    <label for="Passwords"> </label>
+    <input required type="password" id="Passwords" name="Passwords" value="{{ applicant.apassword }}" placeholder="PASSWORD" > <br> <br>
+
 
         <button type="submit" id="rbtnsubmit">Submit</button>
 

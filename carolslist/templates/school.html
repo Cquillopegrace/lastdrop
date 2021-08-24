@@ -9,6 +9,7 @@
 *
 body {
         background-image: url(/static/images/bg2.png) ;
+        background-color: #DDA0DD;
         background-repeat:repeat;
         background-size: cover;
         background-attachment: fixed;
@@ -16,16 +17,16 @@ body {
 }
 
 
-h1{   
-        background-color: #51b8e1;
-        color: darkblue;
-        padding: 100px;
-        margin-left: 00px;
-        padding-top: 35px;
-        padding-bottom: 35px;
-        border-style: solid;
-        border-color: #2196c4;
-}
+h1 { 
+background-color:  #592d86;
+font-style: italic;
+color: #ff7547 ;
+font-size: 23px;
+padding-top: 20px;
+padding-bottom: 10px;
+padding-left: 30px;
+border-radius: 5px;
+        }
 
 
 h2{  
@@ -36,37 +37,51 @@ h2{
 }
   
 
-header {
-        border-style: dashed;
+header
+{
+position: absolute ;
+top: 25px;
+width: 100%;
+font-size: 14px;
+padding-left: 750px;
+
 }
- 
-header ul li {
-        display: inline-block;
-        padding:40px;
-}
- 
-header li a {
-        color: black;
-        text-decoration: none;
-        font-weight: bolder;
-        padding-left: 100px;
+
+ header ul li
+ {
+
+display: inline-block;
+ }
+
+ header li a
+ {
+color: white;
+text-decoration: none;
+font-weight: bolder;
+padding-left: 15px;
 
  }
 
 form {
-       text-align: left;
-       border-style: solid;
-       color:  #2F4F4F;
-       background-color: #7FFFD4;
-       border-radius: 10px;
-       width: 500px;
-       height: 420px;
-       margin-top: 10px;
-       margin-left: 350px;
-       padding-left: 10px;
+border-radius: 5px;
+  background-color: #cc98e6;
+  padding: 20px;
+
 
 }
-/*button { 
+
+input[type=text], [type=int], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-color:  #6b2390;
+
+}
+button { 
         background-color: #00008B; 
         width: 15%;
         color: #ffff66;  
@@ -76,13 +91,26 @@ form {
 
 button:hover { 
         opacity: 0.7; 
-} */
+} 
 form a {
         color:  white;
         background-color:   #00008B;
         border-radius: 5px;
         padding: 5px;
         margin-left: 210px;
+    }
+    .back {
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-style: italic;
+    width: 60px;
+    color: darkorange;  
+    cursor: pointer;
+    margin-left: 350px;
+}
+.back :hover { 
+        opacity: 0.7; 
     }
 
 table
@@ -95,9 +123,10 @@ table
 table tr
 {
         display: inline-block;
-        padding: 10px;
+        padding: 100px;
         padding-top: 100px;
-        margin-top: 100px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         height: : 50px;
 
   
@@ -107,6 +136,7 @@ table tr th
 {
         height: 35px;
         width: 160px;
+        padding-left: 50px;
         font-size: 15px;
         font-family: century gothic;
         color: black;
@@ -116,7 +146,10 @@ table tr th
 table tr td
 {
         display: inline-block;
-        width: 119px;
+        padding: 20px;
+        padding-left: 50px;
+        height: : 20px;
+        width: 150px;
         font-size: 15px;
         font-family: century gothic;
         color: darkblue;
@@ -125,30 +158,39 @@ table tr td
 }
 </style>
 
-<body text= "#00008B" ;>
- 
- <h1 align = "center"> <b> Bacoor Scholarship Application Program </b></h1>
+<body  text= "black" ; >
+ <legend alin = "RightCorner" ><h1 align = "RightCorner"> <b> Online Bacoor Scholarship Program</b></h1></legend></fieldset> 
+      <br>
+
  <header>
     <ul>
         <li>
-<a href="/carolslist/Home"> Home </a></li>
-<li><a href="/carolslist/require"> Requirements</a></li>
-<li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="/carolslist/Contact">Contact</a></li>
-
+<a href="/Home"> HOME </a></li>
+<li><a href="#Guide">GUIDE</a></li>
+<li><a href="/require"> REQUIREMENTS</a></li>
+<li><a href="/Offered"> | LOG IN</a></li>
         </li>
     </ul>
 </header>
  <h2> ADDITIONAL INFORMATION </h2>
 
-<form method="POST" action="/carolslist/{{applicant.id}}/add_applicant">
+<form method="POST" action="/{{applicant.id}}/add_applicant">
 <br><br>
-	<label for="School"> Name of School:</label> 
-        <input required type="text" id="School" name="School" placeholder="Your School" size="31"> <br><br>
-    <label for="SAddress"> School Address: </label>
-        <input required type="text" id="SAddress" name="SAddress" placeholder="Present School" size="31"> <br><br>
-    <label for="YrSection">Year&Section:</label>
-        <input required type="text" id="YrSection" name="YrSection" placeholder="Yr&Sec." size="33"> <br><br>
+        <label for="School"> </label> 
+        <input required type="text" id="School" name="School" placeholder="SCHOOL NAME" size="31"> <br><br>
+        <label for="GradeLevel">  </label>
+        <input required type="text" id="GradeLevel" name="GradeLevel" placeholder="YEAR LEVEL" size="31"> <br><br>
+        <label for="StudsId"> </label>
+        <input required type="text" id="StudsId" name="StudsId" placeholder="STUDENT NO." size="31"> <br><br>
+        <label for="GPA"> </label>
+        <input required type="text" id="GPA" name="GPA" placeholder="GENERAL PERCENTAGE AVERAGE" size="31"> <br><br>
+<!--         <label for="stats"></label>
+        <input required type="text" id="stats" name="stats" placeholder="APPLICATION STATUS" size="33"> <br><br> -->
+        <label for="img">STUDENT ID:</label>
+        <input required type="file" id="img" name="img" accept="image/*"> <br><br>
+        <label for="img1">CLASS CARD:</label>
+        <input required type="file" id="img1" name="img1" accept="image/*"> <br><br>
+
 
 
     <button type="submit" id="rbtnsubmit">Submit</button>
@@ -158,24 +200,6 @@ table tr td
 {% csrf_token %}
 
  </form>
- <table id="caroltable" name='tr'>
-      
-      <tr>   
-                <th>School</th>
-                <th>SAddress</th>
-                <th>Yr&Section</th>
-
-      </tr>  {% for school in applicant.school_set.all %}
-      <tr>
-                <!{{ forloop.counter }}: -->
-
-                <td>{{forloop}}:{{school.NMSchool}}</td>
-                <td>{{school.SAddress}}</td>
-                <td>{{school.YSection}}</td>
-                
-      </tr> {% endfor %}
-
-</table>
 </body>
 </head>
 </html>

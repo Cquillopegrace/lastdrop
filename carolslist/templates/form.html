@@ -9,6 +9,7 @@
 *
 body {
         background-image: url(/static/images/bg2.png) ;
+        background-color: #DDA0DD;
         background-repeat:no-repeat;
         background-size: cover;
         background-attachment: fixed;
@@ -16,185 +17,175 @@ body {
 }
 
 
-h1{   
-        background-color: #51b8e1;
-        color: darkblue;
-        padding: 100px;
-        margin-left: 00px;
-        padding-top: 35px;
-        padding-bottom: 35px;
-        border-style: solid;
-        border-color: #2196c4;
+h1 { 
+background-color:  #592d86;
+font-style: italic;
+color: #ff7547 ;
+font-size: 23px;
+padding-top: 20px;
+padding-bottom: 10px;
+padding-left: 30px;
+border-radius: 5px;
+        }
+
+p.a {
+  color: black;
+  font-weight: bolder;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  word-spacing: normal;
+  word-spacing: 15px;
+  letter-spacing: 1cm;
+  border-radius: 5px;
 }
 
-h2{  
-        color: black;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 50px;
-}
+
 
 button { 
-        background-color: #00008B; 
+        background-color: #ae5bd7; 
         width: 15%;
-        color: #ffff66;  
+        height: 3%;
+        color: black; 
+        font-weight: bolder; 
         cursor: pointer;
-        margin-left: 200px;
+        margin-left: 400px;
+        border-color:  #6b2390;
 } 
 
 button:hover { 
         opacity: 0.7; 
 } 
-header {
-        border-style: dashed;
+header
+{
+position: absolute ;
+top: 25px;
+width: 100%;
+font-size: 14px;
+padding-left: 750px;
 
 }
- 
-header ul li {
-        display: inline-block;
-        padding:40px;
-}
- 
-header li a {
-        color: black;
-        text-decoration: none;
-        font-weight: bolder;
-        padding-left: 100px;
+
+ header ul li
+ {
+
+display: inline-block;
+ }
+
+ header li a
+ {
+color: white;
+text-decoration: none;
+font-weight: bolder;
+padding-left: 15px;
 
  }
 
+.next {
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-style: italic;
+    width: 60px;
+    color: darkorange;  
+    cursor: pointer;
+    margin-left: 790px;
+}
+.next :hover { 
+        opacity: 0.7; 
+    }
+
 form {
-       text-align: left;
-       border-style: solid;
-       color:  #2F4F4F;
-       background-color: #7FFFD4;
-       border-radius: 10px;
-       width: 500px;
-       height: 450px;
-       margin-top: 10px;
-       margin-left: 350px;
-       padding-left: 10px;
+border-radius: 5px;
+  background-color: #cc98e6;
+  padding: 20px;
+
 
 }
 
-table
+input[type=text], [type=int], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-color:  #6b2390;
 
-{
-        text-align: left;
-        height: 100px;
 }
 
-table tr
-{
-        display: inline-block;
-        padding: 10px;
-        padding-top: 100px;
-        margin-top: 100px;
-        height: : 50px;
-
-  
-}
-
-table tr th
-{
-        height: 35px;
-        width: 150px;
-        font-size: 15px;
-        font-family: century gothic;
-        color: black;
-        border: 1px solid;
-        background-color: rgb(00,00,00,0.2);
-}
-table tr td
-{
-        display: inline-block;
-        width: 119px;
-        font-size: 15px;
-        font-family: century gothic;
-        color: darkblue;
-        border: 1px solid;
-        background-color:whitesmoke ;
-}
 </style>
   
      
-<body text= "#00008B" ;>
- 
- <h1 align = "center"> <b> Bacoor Scholarship Application Program </b></h1>
+<body  text= "black" ; >
+ <legend alin = "RightCorner" ><h1 align = "RightCorner"> <b> Online Bacoor Scholarship Program</b></h1></legend></fieldset> 
+      <br>
 
  <header>
     <ul>
         <li>
-<a href="/carolslist/Home"> Home </a></li>
-<li><a href="/carolslist/require"> Requirements</a></li>
-<li><a href="/carolslist/Offered">Offered</a></li>
-<li><a href="/carolslist/Contact">Contact</a></li>
-
-
+<a href="Home"> HOME </a></li>
+<li><a href="#Guide">GUIDE</a></li>
+<li><a href="require"> REQUIREMENTS</a></li>
+<li><a href="Offered"> | LOG IN</a></li>
         </li>
     </ul>
 </header>
-  
- <h2>  Applicant Form </h2>
-<form method="POST" action="/carolslist/new">
-<br><br>
-    <label for="StudentID">StudID:</label> 
-        <input required type="text" id="StudentID" name="StudentID" placeholder="InputID" size="40"> <br><br>
-    <label for="CompleteName">Full Name: </label>
-        <input required type="text" id="CompleteName" name="CompleteName" placeholder="First/Middle/LastName"  size="37"> <br><br>
-    <label  for="Address">Present Address:</label>
-        <input required type="text" id="Address" name="Address" placeholder="Full Address"   size="31"> <br><br>
-    <label for="Gender">Input Gender:</label>
-        <input required type="text" id="Gender" name="Gender" placeholder="F/M/Others"  size="34"> <br><br>
-    <label for="MothersName"> Mothers Full Name:</label>
-        <input required type="text" id="MothersName" name="MothersName" placeholder="First/Middle/Last Name"   size="28"> <br><br>
-    <label for="MOccupation"> Occupation:</label>
-        <input required type="text" id="MOccupation" name="MOccupation" placeholder="Occupations"   size="36"> <br><br>
-    <label for="FathersName"> Fathers Full Name:</label>
-        <input required type="text" id="FathersName" name="FathersName" placeholder="First/Middle/Last Name" size="29"> <br><br>
-    <label for="FAOccupation"> Occupation:</label>
-        <input required type="text" id="FAOccupation" name="FAOccupation" placeholder="Occupations"  size="36"> <br><br>
-    <label for="Annual Income"> Yearly Income:</label>
-        <input required type="char" id="Annual Income" name="Annual Income" placeholder="Input Income"  size="34"> <br><br>
 
-     <button type="submit" id="rbtnsubmit">Submit</button>
+
+<p class="a">-APPLICANT INFORMATION-</p> <br><br>
+
+<form method="POST" action="/new"> 
+<br><br>
+    <label for="CompleteName"> </label>
+        <input required type="text" id="CompleteName" name="CompleteName" placeholder="NAME OF APPLICANT"  size="37"> <br><br>
+    <label  for="Address"></label>
+        <input required type="text" id="Address" name="Address" placeholder="COMPLETE HOME ADDRESS"   size="31"> <br><br>
+    <label for="Aage"> </label>
+    <input required type="int" id="Aage" name="Aage" placeholder="AGE" > <br> <br>
+        <label for="Gender"></label>
+    <select id="Gender" name="Gender"> 
+        <option value="female"> FEMALE </option> <option id="male"> MALE</option> </select> <br><br>
+    <label for="Cnumber"> </label>
+    <input required type="int" id="Cnumber" name="Cnumber" placeholder="Contact Number" > <br> <br>
+    <label for="EmailAdd"> </label>
+        <input required type="text" id="EmailAdd" name="EmailAdd" placeholder="EMAIL ADDRESS"   size="28"> <br><br>
+    <label for="GName"> </label>
+        <input required type="text" id="GName" name="GName" placeholder="GUARDIAN's NAME" size="29"> <br><br>
+    <label for="Occupation"> </label>
+        <input required type="text" id="Occupation" name="Occupation" placeholder="GUARDIAN's OCCUPATION" size="29"> <br><br>
+    <label for="Annual Income"> </label>
+    <input required type="int" id="Annual Income" name="Annual Income" placeholder="ANNUAL INCOME" > <br> <br>
+    <label for="Usersname"> </label>
+    <input required type="text" id="Usersname" name="Usersname" placeholder="USER NAME" > <br> <br>
+
+    <! -- Password field -->
+    <label for="Passwords"> </label>
+    <input required type="password" id="Passwords" name="Passwords" placeholder="PASSWORD" > <br> <br>
+    <! -- An element to toggle between password visibility -->
+
+    <input type="checkbox" onclick="myFunction()">Show Password
+
+    <script>
+function myFunction() {
+  var x = document.getElementById("Passwords");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+     <label for="stats"></label>
+        <input required type="text" id="stats" name="stats" placeholder="APPLICATION STATUS" size="33"> <br><br>
+
+     <button type="submit" id="rbtnsubmit" >SUBMIT</button>
 
 {% csrf_token %}
 </form>
 
-<table id="caroltable" name='tr'>
-      
-      <tr>   
-                <th>ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Gender</th>
-                <th>Mother</th>
-                <th>Occu.</th>
-                <th>Father</th>
-                <th>Occu.</th>
-                <th>Income</th>
-
-      </tr> {% for applicant in applicants %} 
-      <tr>
-                <! -- {{ forloop.counter }}: -- >
-                <td>{{applicant.nStudentId}}</td>
-                <td>{{applicant.nFullName}}</td>
-                <td>{{applicant.nAddress}}</td>
-                <td>{{applicant.nGenders}}</td> 
-                <td>{{applicant.nMoNames}}</td>
-                <td>{{applicant.nOccupation1}}</td>
-                <td>{{applicant.nFaNames}}</td>
-                <td>{{applicant.nOccupation2}}</td>
-                <td>{{applicant.nAIncome}}</td>
-                <td><a href="edit/{{applicant.id}}">EDIT</a></td>
-                <td><a href="delete/{{applicant.id}}">DELETE</a></td>
-                
-      </tr> {% endfor %}
-
-</table>
 </body>
 </body>
 </head>
 </html>
-

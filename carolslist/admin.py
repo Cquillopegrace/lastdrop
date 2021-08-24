@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import Applicant, School, Grades, Credentials, TypesOfScholarship
+from .models import Applicant, School, Admin
 
 admin.site.register(Applicant)
 admin.site.register(School)
-admin.site.register(Grades)
-admin.site.register(Credentials)
-admin.site.register(TypesOfScholarship)
+admin.site.register(Admin)
 
 # Register your models here.

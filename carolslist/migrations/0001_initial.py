@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('nOccupation1', models.TextField(default='')),
                 ('nFaNames', models.TextField(default='')),
                 ('nOccupation2', models.TextField(default='')),
-                ('nAIncome', models.CharField(default='', max_length=6)),
+                ('nAIncome', models.IntegerField(default='', max_length=6)),
             ],
         ),
         migrations.CreateModel(
