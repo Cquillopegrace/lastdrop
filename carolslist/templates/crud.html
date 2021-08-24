@@ -9,22 +9,22 @@
 *
 body {
         background-image: url(/static/images/bg2.png) ;
+        background-color: #DDA0DD;
         background-repeat:no-repeat;
         background-size: cover;
         background-attachment: fixed;
         border-radius: 100px;
 }
-h1{   
-        background-color: #51b8e1;
-        text-align: center;
-        color: darkblue;
-        padding: 100px;
-        margin-left: 00px;
-        padding-top: 35px;
-        padding-bottom: 35px;
-        border-style: solid;
-        border-color: #2196c4;
-}
+h1 { 
+background-color:  #592d86;
+font-style: italic;
+color: #ff7547 ;
+font-size: 23px;
+padding-top: 20px;
+padding-bottom: 10px;
+padding-left: 30px;
+border-radius: 5px;
+        }
 h4 {
         text-align: center;
         text-decoration: underline;
@@ -32,17 +32,22 @@ h4 {
 }
 
 form {
-       text-align: left;
-       border-style: solid;
-       color:  #2F4F4F;
-       background-color: #7FFFD4;
-       border-radius: 10px;
-       width: 500px;
-       height: 450px;
-       margin-top: 10px;
-       margin-left: 350px;
-       padding-left: 10px;
-       margin-top: 100px;
+border-radius: 5px;
+  background-color: #cc98e6;
+  padding: 20px;
+
+
+}
+
+input[type=text], [type=int], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-color:  #6b2390;
 
 }
 button { 
@@ -50,7 +55,7 @@ button {
         width: 15%;
         color: #ffff66;  
         cursor: pointer;
-        margin-left: 200px;
+        margin-left: 500px;
 } 
 
 button:hover { 
@@ -58,9 +63,10 @@ button:hover {
 } 
 
 </style>
+<body>
+    <legend alin = "RightCorner" ><h1 align = "RightCorner"> <b> Online Bacoor Scholarship Program</b></h1></legend></fieldset>
 
-<h1> Please, Re-check your details! </h1>
-<h4> Click submit button if all of your information are truth and correct!</h4>
+<h4> "Please, Update Applicant Status!"</h4>
 
 	<form method="POST" action="update/{{ applicants.id }}">
 
@@ -68,40 +74,12 @@ button:hover {
 
 <br><br>
 
-    <label for="CompleteName"> </label>
-        <input required type="text" id="CompleteName" name="CompleteName" placeholder="NAME OF APPLICANT" value="{{ applicant.nFullName }}" size="37"> <br><br>
-    <label  for="Address"></label>
-        <input required type="text" id="Address" name="Address" placeholder="COMPLETE HOME ADDRESS" value="{{ applicant.nAddress }}"  size="31"> <br><br>
-
-    <label for="Aage"> </label>
-    <input required type="int" id="Aage" name="Aage" placeholder="AGE" value="{{ applicant.aage }}" > <br> <br>
-
-    <label for="Gender"></label>
-    <select id="Gender" name="Gender" value="{{ applicant.nGenders}}"> 
-        <option value="female"> FEMALE </option> <option id="male"> MALE</option> </select> <br><br>
-
-    <label for="Cnumber"> </label>
-    <input required type="int" id="Cnumber" name="Cnumber" value="{{ applicant.acontumber}}" placeholder="Contact Number" > <br> <br>
-
-    <label for="EmailAdd"> </label>
-        <input required type="text" id="EmailAdd" name="EmailAdd" value="{{ applicant.aemailAddress}}" placeholder="EMAIL ADDRESS"   size="28"> <br><br>
-
-    <label for="GName"> </label>
-        <input required type="text" id="GName" name="GName" value="{{applicant.agname}}" placeholder="GUARDIAN's NAME" size="29"> <br><br>
-
-    <label for="Occupation"> </label>
-        <input required type="text" id="Occupation" name="Occupation" placeholder="GUARDIAN's OCCUPATION" value="{{ applicant.asoi}}" size="29"> <br><br>
-
-    <label for="Annual Income"> </label>
-    <input required type="int" id="Annual Income" value="{{ applicant.nAIncome}}" name="Annual Income" placeholder="ANNUAL INCOME" > <br> <br>
-
-    <label for="Usersname"> </label>
-    <input required type="text" id="Usersname" name="Usersname" value="{{ applicant.ausername }}" placeholder="USER NAME" > <br> <br>
-
-    <label for="Passwords"> </label>
-    <input required type="password" id="Passwords" name="Passwords" value="{{ applicant.apassword }}" placeholder="PASSWORD" > <br> <br>
+    <label for="stats"></label>
+    <input required type="text" id="stats" name="stats" placeholder="APPLICATION STATUS" value="{{ applicant.sstatus }}" size="33"> <br><br>
 
 
         <button type="submit" id="rbtnsubmit">Submit</button>
-
+</form>
+</body>
+</body>
 </html>

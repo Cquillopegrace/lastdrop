@@ -79,13 +79,12 @@ th {
  <table id="caroltable" name='tr'>
       
       <tr>   
-                <th>School</th>
-                <th>GradeLevel</th>
-                <th>Student No.</th>
+                <th>SCHOOL</th>
+                <th>GRADE LEVEL</th>
+                <th>STUDENT NO.</th>
                 <th>GPA</th>
-                <th>File 1</th>
-                <th>File 2</th>
-                <th>Status</th>
+                <th>STUDENT ID</th>
+                <th>CLASS CARD</th>
 
       </tr>  {% for school in applicant.school_set.all %}
       <tr>
@@ -97,7 +96,6 @@ th {
                 <td>{{school.nGPA}}</td>
                 <td>{{school.sid}}</td>
                 <td>{{school.sgwa}}</td>
-                 <td>{{school.sstatus}}</td>
                 
       </tr> {% endfor %}
 

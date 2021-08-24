@@ -47,6 +47,7 @@ font-weight: bolder;
 padding-left: 15px;
 
  }
+
 table, td, th {
   border: 1px solid black;
 }
@@ -62,7 +63,7 @@ th {
   color: black;
   
    font-family: Lucida Handwriting, serif;
-  font-size: 20px;
+  font-size: 15px;
 }
 </style>
 
@@ -109,7 +110,6 @@ th {
                 <td>{{applicant.apassword}}</td>
                 <td>{{applicant.sstatus}}</td>
                 <td><a href="edit/{{applicant.id}}">EDIT</a></td>
-                <td><a href="delete/{{applicant.id}}">DELETE</a></td>
                 
       </tr> {% endfor %}
 

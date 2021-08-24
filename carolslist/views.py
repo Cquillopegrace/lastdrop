@@ -29,10 +29,10 @@ def View(request) :
 def AdminHome(request):
     return render(request, 'adminaccount.html')
 
+
 def Homerun_Form(request):
     applicants = Applicant.objects.all()
     return render(request, 'form.html',{'applicants' : applicants})
-
 
 def new_applicant(request):
     applicants_ = Applicant.objects.create(nFullName=request.POST['CompleteName'],nAddress=request.POST['Address'],aage=request.POST['Aage'],nGenders=request.POST['Gender'],acontumber =request.POST['Cnumber'],aemailAddress=request.POST['EmailAdd'],agname=request.POST['GName'],asoi=request.POST['Occupation'], nAIncome=request.POST['Annual Income'],ausername =request.POST['Usersname'],apassword=request.POST['Passwords'],sstatus=request.POST['stats'])
@@ -93,17 +93,7 @@ def edit(request, id):
 
 def update(request, id):
     applicant= Applicant.objects.get(id=id)
-    applicant.nFullName = request.POST['CompleteName']
-    applicant.nAddress = request.POST['Address']
-    applicant.aage = request.POST['Aage']
-    applicant.nGenders = request.POST['Gender']
-    applicant.acontumber = request.POST['Cnumber']
-    applicant.aemailAddress = request.POST['EmailAdd']
-    applicant.agname = request.POST['GName']
-    applicant.asoi= request.POST['Occupation']
-    applicant.nAIncome = request.POST['Annual Income']
-    applicant.ausername = request.POST['Usersname']
-    applicant.apassword = request.POST['Passwords']
+    applicant.sstatus = request.POST['stats']
     applicant.save()
     return redirect ('/applicant_list')
 
