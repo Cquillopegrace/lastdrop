@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('slevel', models.TextField(default='')),
                 ('nStudentId', models.TextField(default='')),
                 ('nGPA', models.IntegerField(default='0')),
-                # ('sstatus', models.TextField(default='')),
+                ('sstatus', models.TextField(default='')),
                 ('sid', models.ImageField(default='', upload_to='')),
                 ('sgwa', models.ImageField(default='', upload_to='')),
             ],

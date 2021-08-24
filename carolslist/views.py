@@ -20,6 +20,9 @@ def adminlogin(request):
 def Message(request) :
     return render(request, 'results.html')
 
+def require(request):
+    return render(request, 'require.html')
+
 def List(request) :
     return render(request,'applicant_list.html')
 
@@ -50,7 +53,7 @@ def add_applicant(request,applicant_id):
 
 
 def applicant_page(request): 
- if request.method == 'POST':
+    if request.method == 'POST':
         if Applicant.objects.filter(ausername=request.POST['Usersname'], apassword=request.POST['Passwords']).exists():
             applicant_ = Applicant.objects.get(ausername=request.POST['Usersname'], apassword=request.POST['Passwords'])
             return redirect(f'/{applicant_.id}/view_applicant')
@@ -65,16 +68,16 @@ def adminaccount(request):
     return render(request, 'adminaccount.html', {'admins' : admins})
 
 def applicant_list(request): 
-   applicants = Applicant.objects.all() 
-   return render(request, 'applicant_list.html',{'applicants' : applicants})
+    applicants = Applicant.objects.all() 
+    return render(request, 'applicant_list.html',{'applicants' : applicants})
 
 def applicant_view(request, applicant_id):   
-   applicant_ = Applicant.objects.get(id=applicant_id)
-   school = School.objects.all()
-   return render(request, 'applicant_view.html', {'applicant': applicant_,'school' : school})    
+    applicant_ = Applicant.objects.get(id=applicant_id)
+    school = School.objects.all()
+    return render(request, 'applicant_view.html', {'applicant': applicant_,'school' : school})    
 
 def admin_page(request): 
- if request.method == 'POST':
+    if request.method == 'POST':
         if Admin.objects.filter(adminu=request.POST['aadminu'], adminp=request.POST['aadminp']).exists():
             admin_ = Admin.objects.get(adminu=request.POST['aadminu'], adminp=request.POST['aadminp'])
             return redirect(f'/adminaccount')
@@ -93,6 +96,7 @@ def edit(request, id):
 
 def update(request, id):
     applicant= Applicant.objects.get(id=id)
+    applicant.sstatus = request.POST['stats']
     applicant.save()
     return redirect ('/applicant_list')
 

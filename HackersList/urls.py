@@ -18,11 +18,11 @@ from django.conf.urls import url
 
 from django.contrib import admin
 
-urlpatterns = [    
-
-    url('admin', admin.site.urls),
+urlpatterns = [  
+    url('admin', admin.site.urls),    
     url(r'^$', views.Homerun, name='Homerun'),    
     url(r'^Home$', views.Home, name='Home'),
+    url(r'^require$', views.require, name='require'),
     url(r'^Offered$', views.Offered, name='Offered'),
     url(r'^adminlogin$', views.adminlogin, name='adminlogin'),
     url(r'^List$', views.List, name='List'),
@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^new$', views.new_applicant, name='new_applicant'),    
     url(r'^(\d+)/view_applicant$', views.view_applicant, name='view_applicant'),   
     url(r'^(\d+)/add_applicant$', views.add_applicant, name='add_applicant'),
+    
 
     url(r'^adminaccount$', views.adminaccount, name='adminaccount'),  
     url(r'^applicant_list$', views.applicant_list, name='applicant_list'), 
@@ -39,7 +40,7 @@ urlpatterns = [
 
     url(r'^applicant_page$', views.applicant_page, name='applicant_page'), 
     url(r'^admin_page$', views.admin_page, name='admin_page'), 
-    
+
     url(r'^edit/(?P<id>\d+)$', views.edit, name='edit'),
     url(r'^edit/update/(?P<id>\d+)$', views.update, name='update'),
     url(r'^delete/(?P<id>\d+)$', views.delete, name='delete'),]

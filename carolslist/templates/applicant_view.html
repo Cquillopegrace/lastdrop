@@ -85,6 +85,7 @@ th {
                 <th>GPA</th>
                 <th>STUDENT ID</th>
                 <th>CLASS CARD</th>
+                 <th>STATUS</th>
 
       </tr>  {% for school in applicant.school_set.all %}
       <tr>
@@ -96,6 +97,7 @@ th {
                 <td>{{school.nGPA}}</td>
                 <td>{{school.sid}}</td>
                 <td>{{school.sgwa}}</td>
+                <td>{{applicant.sstatus}}</td>
                 
       </tr> {% endfor %}
 
